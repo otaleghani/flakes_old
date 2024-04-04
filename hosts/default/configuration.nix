@@ -100,20 +100,12 @@
     mpv
     imv
     nerdfonts
-    zsh
-    zsh-completions
-    oh-my-zsh
     firefox
     git
     wl-clipboard
   ];
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-    };
-  };
+	environment.shells = with pkgs; [ fish ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
