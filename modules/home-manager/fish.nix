@@ -5,6 +5,6 @@
 		enable = true;
 		interactiveShellInit = ''
 			echo "lmao"
-		''
+		'';
 	};
 }
