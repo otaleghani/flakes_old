@@ -37,7 +37,7 @@
 	  	base1D = "74C0E7";
 	  	base1E = "D99BE9";
 	  	base1F = "F0A8C5";
-	  }
+	  };
   };
 #  gtk.enable = true;
 #  gtk.cursorTheme.package = pkgs.bibata-cursors;
