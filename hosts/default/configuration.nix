@@ -9,8 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      inputs.nix-colors.homeManagerModules.default
     ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -103,6 +103,10 @@
     firefox
     git
     wl-clipboard
+    fzf
+    tmux
+    pywal
+    brightnessctl
   ];
   programs.fish.enable = true;
 
@@ -134,10 +138,10 @@
   system.stateVersion = "23.11"; # Did you read the comment?
   
   # TESTING
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
+#    programs.hyprland = {
+#      enable = true;
+#      xwayland.enable = true;
+#    };
     environment.sessionVariables = {
       WLR_NO_HARDWARE_CURSORS = "1";
       NIXOS_OZONE_WL = "1";

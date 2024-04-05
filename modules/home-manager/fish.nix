@@ -4,7 +4,10 @@
 	programs.fish = {
 		enable = true;
 		interactiveShellInit = ''
-			echo "lmao"
+			set fish_greeting
 		'';
+		plugins = [
+			{ name = "grc"; src = pkgs.fishPlugins.grc.src; }
+		];	
 	};
 }

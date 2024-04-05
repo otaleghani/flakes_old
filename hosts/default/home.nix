@@ -1,6 +1,56 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+  	inputs.nix-colors.homeManagerModules.default
+	../../modules/home-manager/kitty.nix 
+	../../modules/home-manager/fish.nix 
+ 	../../modules/home-manager/hyprland.nix 
+ 	../../modules/home-manager/waybar.nix 
+  ];
+  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
+  colorScheme = {
+	palette = {
+		base00 = ""; #base
+		base01 = ""; #mantle
+		base02 = ""; #surface0
+		base03 = ""; #surface1
+		base04 = ""; #surface2
+		base05 = ""; #text0
+		base06 = ""; #text1
+		base07 = ""; #text2
+
+		base08 = "";
+		base09 = "";
+		base0A = "";
+		base0B = "";
+		base0C = "";
+		base0D = "";
+		base0E = "";
+		base0F = "";
+
+		base18 = "";
+		base19 = "";
+		base1A = "";
+		base1B = "";
+		base1C = "";
+		base1D = "";
+		base1E = "";
+		base1F = "";
+	}
+  };
+#  gtk.enable = true;
+#  gtk.cursorTheme.package = pkgs.bibata-cursors;
+#  gtk.cursorTheme.name = "Bibata-Modern-Ice";
+#  gtk.theme.package = pkgs.adw-gtk3;
+#  gtk.theme.name = "adw-gtk3";
+#  #gtk.iconTheme.package = gruvboxPlus;
+#  #gtk.iconTheme.name = "GruvboxPlus";
+
+#  qt.enable = true;
+#  qt.platformTheme = "gtk";
+#  qt.style.name = "catppuccin-frappe";
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "oliviero";
@@ -22,11 +72,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -72,9 +118,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  imports = [
-	../../modules/home-manager/kitty.nix
-	../../modules/home-manager/fish.nix
-  ];
 }
