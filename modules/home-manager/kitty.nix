@@ -43,24 +43,24 @@
     color8 	#${config.colorScheme.palette.base04}
 
     color1	#${config.colorScheme.palette.base08}
-    color9 	#${config.colorScheme.palette.base08}
+    color9 	#${config.colorScheme.palette.base18}
 
     color2 	#${config.colorScheme.palette.base0B}
-    color10 	#${config.colorScheme.palette.base0B}
+    color10 	#${config.colorScheme.palette.base1B}
 
     color3 	#${config.colorScheme.palette.base0A}
-    color11 	#${config.colorScheme.palette.base0A}
+    color11 	#${config.colorScheme.palette.base1A}
 
     color4 	#${config.colorScheme.palette.base0C}
-    color12 	#${config.colorScheme.palette.base0C}
+    color12 	#${config.colorScheme.palette.base1C}
 
     color5 	#${config.colorScheme.palette.base0F}
-    color13 	#${config.colorScheme.palette.base0F}
+    color13 	#${config.colorScheme.palette.base1F}
 
-    color6 	#${config.colorScheme.palette.base0C}
-    color14 	#${config.colorScheme.palette.base0C}
+    color6 	#${config.colorScheme.palette.base0D}
+    color14 	#${config.colorScheme.palette.base1D}
 
-    color7 	#${config.colorScheme.palette.base07}
-    color15 	#${config.colorScheme.palette.base0D}
+    color7 	#${config.colorScheme.palette.base05}
+    color15 	#${config.colorScheme.palette.base06}
   '';
 }

@@ -2,42 +2,42 @@
 
 {
   imports = [
-  	inputs.nix-colors.homeManagerModules.default
-	../../modules/home-manager/kitty.nix 
-	../../modules/home-manager/fish.nix 
- 	../../modules/home-manager/hyprland.nix 
- 	../../modules/home-manager/waybar.nix 
+    inputs.nix-colors.homeManagerModules.default
+    ../../modules/home-manager/kitty.nix 
+	  ../../modules/home-manager/fish.nix 
+ 	  ../../modules/home-manager/hyprland.nix 
+ 	  ../../modules/home-manager/waybar.nix 
   ];
   # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
   colorScheme = {
-	palette = {
-		base00 = ""; #base
-		base01 = ""; #mantle
-		base02 = ""; #surface0
-		base03 = ""; #surface1
-		base04 = ""; #surface2
-		base05 = ""; #text0
-		base06 = ""; #text1
-		base07 = ""; #text2
+	  palette = {
+	  	base00 = "041218"; #base
+	  	base01 = "061B24"; #mantle
+	  	base02 = "092938"; #surface0
+	  	base03 = "0E3E52"; #surface1
+	  	base04 = "114C66"; #surface2
+	  	base05 = "F2FBFF"; #text0
+	  	base06 = "F9E8EF"; #text1
+	  	base07 = "EDE0F9"; #text2
 
-		base08 = "";
-		base09 = "";
-		base0A = "";
-		base0B = "";
-		base0C = "";
-		base0D = "";
-		base0E = "";
-		base0F = "";
+	  	base08 = "FC8D85"; #red
+	  	base09 = "FFC4A1"; #orange
+	  	base0A = "FFE991"; #yellow
+	  	base0B = "99EB9B"; #green
+	  	base0C = "91E0D5"; #acquamarine
+	  	base0D = "80D4FF"; #cyan
+	  	base0E = "EDAAFF"; #purple
+	  	base0F = "FFB3D1"; #coral
 
-		base18 = "";
-		base19 = "";
-		base1A = "";
-		base1B = "";
-		base1C = "";
-		base1D = "";
-		base1E = "";
-		base1F = "";
-	}
+	  	base18 = "E37F78";
+	  	base19 = "EEB796";
+	  	base1A = "F3DE8A";
+	  	base1B = "88D18A";
+	  	base1C = "81C8BE";
+	  	base1D = "74C0E7";
+	  	base1E = "D99BE9";
+	  	base1F = "F0A8C5";
+	  }
   };
 #  gtk.enable = true;
 #  gtk.cursorTheme.package = pkgs.bibata-cursors;
