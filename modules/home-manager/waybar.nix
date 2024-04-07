@@ -197,8 +197,8 @@
 	"on-click" = "pkill rofi || ~/.config/scripts/bluetooth.sh";
       };
       "custom/weather" = {
-        "exec" = "awk 'NR==1 {print substr($0, length($0), 1)}' ~/.forecast/forecast";
-	"on-click" = "notify-send '$(cat ~/.forecast/forecast)'";
+        "exec" = "~/.config/scripts/cron/ansiweather.sh -l Pontassieve,IT -a false -p false -w false -d false -h false -s true | awk -F\" - UVI:\" '{sub(/.*: /, \"\", $1); print $1}' | awk '{print substr($0, length($0), 1) \" \" substr($0, 1, length($0)-1)}'";
+	"on-click" = "notify-send \"$(cat ~/.forecast/forecast)\"";
       };
       "custom/launcher" = {
         "format" = " ";
