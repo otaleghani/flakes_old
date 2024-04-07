@@ -87,9 +87,16 @@
   home.file = {
     "./.config/scripts/power.sh".source = ../../modules/scripts/power.sh;
     "./.config/scripts/power.sh".executable = true;
-
     "./.config/scripts/wifi.sh".source = ../../modules/scripts/wifi.sh;
     "./.config/scripts/wifi.sh".executable = true;
+    "./.config/scripts/bluetooth.sh".source = ../../modules/scripts/bluetooth.sh;
+    "./.config/scripts/bluetooth.sh".executable = true;
+
+    # Weather
+    "./.config/scripts/cron/weather.sh".source = ../../modules/scripts/cron/weather.sh;
+    "./.config/scripts/cron/weather.sh".executable = true;
+    "./.config/scripts/cron/ansiweather.sh".source = ../../modules/scripts/cron/ansiweather.sh;
+    "./.config/scripts/cron/ansiweather.sh".executable = true;
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a

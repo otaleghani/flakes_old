@@ -180,6 +180,7 @@
       modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
+	"custom/weather"
         "backlight"
         "memory"
         "cpu"
@@ -193,7 +194,11 @@
         "format-off" = "󰂲";
 	"format-on" = "󰂯";
 	"format-connected" = "󰂱";
-	"on-click" = "pkill rofi || ~/.config/scripts/bluetooth.sh"
+	"on-click" = "pkill rofi || ~/.config/scripts/bluetooth.sh";
+      };
+      "custom/weather" = {
+        "exec" = "awk 'NR==1 {print substr($0, length($0), 1)}' ~/.forecast/forecast";
+	"on-click" = "notify-send '$(cat ~/.forecast/forecast)'";
       };
       "custom/launcher" = {
         "format" = " ";

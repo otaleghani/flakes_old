@@ -71,6 +71,15 @@
   fonts.packages = with pkgs;
     [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
 
+  # cronjobs
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "13 * * * * ~/.config/scripts/cron/weather -a Pontassieve,IT"
+      "13 * * * * ~/.config/scripts/cron/crypto -a 0a221abc-73d9-4bae-8376-a11a2e05a0c2 -b KAS -c EUR"
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     neovim
     wget
@@ -99,6 +108,8 @@
     brightnessctl
     nixfmt
     spotify-player 
+    jq
+    bc
   ];
   programs.fish.enable = true;
 
