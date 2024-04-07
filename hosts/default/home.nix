@@ -3,53 +3,53 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ../../modules/home-manager/kitty.nix 
-	  ../../modules/home-manager/fish.nix 
- 	  ../../modules/home-manager/hyprland.nix 
- 	  ../../modules/home-manager/waybar.nix 
+    ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/fish.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/waybar.nix
   ];
   # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
   colorScheme = {
-	  palette = {
-	  	base00 = "041218"; #base
-	  	base01 = "061B24"; #mantle
-	  	base02 = "092938"; #surface0
-	  	base03 = "0E3E52"; #surface1
-	  	base04 = "114C66"; #surface2
-	  	base05 = "F2FBFF"; #text0
-	  	base06 = "F9E8EF"; #text1
-	  	base07 = "EDE0F9"; #text2
+    palette = {
+      base00 = "041218"; # base
+      base01 = "061B24"; # mantle
+      base02 = "092938"; # surface0
+      base03 = "0E3E52"; # surface1
+      base04 = "114C66"; # surface2
+      base05 = "F2FBFF"; # text0
+      base06 = "F9E8EF"; # text1
+      base07 = "EDE0F9"; # text2
 
-	  	base08 = "FC8D85"; #red
-	  	base09 = "FFC4A1"; #orange
-	  	base0A = "FFE991"; #yellow
-	  	base0B = "99EB9B"; #green
-	  	base0C = "91E0D5"; #acquamarine
-	  	base0D = "80D4FF"; #cyan
-	  	base0E = "EDAAFF"; #purple
-	  	base0F = "FFB3D1"; #coral
+      base08 = "FC8D85"; # red
+      base09 = "FFC4A1"; # orange
+      base0A = "FFE991"; # yellow
+      base0B = "99EB9B"; # green
+      base0C = "91E0D5"; # acquamarine
+      base0D = "80D4FF"; # cyan
+      base0E = "EDAAFF"; # purple
+      base0F = "FFB3D1"; # coral
 
-	  	base18 = "E37F78";
-	  	base19 = "EEB796";
-	  	base1A = "F3DE8A";
-	  	base1B = "88D18A";
-	  	base1C = "81C8BE";
-	  	base1D = "74C0E7";
-	  	base1E = "D99BE9";
-	  	base1F = "F0A8C5";
-	  };
+      base18 = "E37F78";
+      base19 = "EEB796";
+      base1A = "F3DE8A";
+      base1B = "88D18A";
+      base1C = "81C8BE";
+      base1D = "74C0E7";
+      base1E = "D99BE9";
+      base1F = "F0A8C5";
+    };
   };
-#  gtk.enable = true;
-#  gtk.cursorTheme.package = pkgs.bibata-cursors;
-#  gtk.cursorTheme.name = "Bibata-Modern-Ice";
-#  gtk.theme.package = pkgs.adw-gtk3;
-#  gtk.theme.name = "adw-gtk3";
-#  #gtk.iconTheme.package = gruvboxPlus;
-#  #gtk.iconTheme.name = "GruvboxPlus";
+  #  gtk.enable = true;
+  #  gtk.cursorTheme.package = pkgs.bibata-cursors;
+  #  gtk.cursorTheme.name = "Bibata-Modern-Ice";
+  #  gtk.theme.package = pkgs.adw-gtk3;
+  #  gtk.theme.name = "adw-gtk3";
+  #  #gtk.iconTheme.package = gruvboxPlus;
+  #  #gtk.iconTheme.name = "GruvboxPlus";
 
-#  qt.enable = true;
-#  qt.platformTheme = "gtk";
-#  qt.style.name = "catppuccin-frappe";
+  #  qt.enable = true;
+  #  qt.platformTheme = "gtk";
+  #  qt.style.name = "catppuccin-frappe";
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -72,7 +72,7 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
-	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -85,6 +85,12 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    "./.config/scripts/power.sh".source = ../../modules/scripts/power.sh;
+    "./.config/scripts/power.sh".executable = true;
+
+    "./.config/scripts/wifi.sh".source = ../../modules/scripts/wifi.sh;
+    "./.config/scripts/wifi.sh".executable = true;
+
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -112,9 +118,7 @@
   #
   #  /etc/profiles/per-user/oliviero/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-     EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

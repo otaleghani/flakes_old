@@ -3,14 +3,14 @@
 {
   programs.kitty.enable = true;
   programs.kitty.settings = {
-    font_family = "JetBrainsMono Nerd Font";	
+    font_family = "JetBrainsMono Nerd Font";
     font_size = "12";
     foreground = "#${config.colorScheme.palette.base05}";
     background = "#${config.colorScheme.palette.base00}";
     shell = "fish";
   };
   programs.kitty.extraConfig = ''
-    background_opacity 0.9
+    background_opacity 0.8
 
     selection_foreground #${config.colorScheme.palette.base00}
     selection_background #${config.colorScheme.palette.base06}
