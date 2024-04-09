@@ -98,16 +98,12 @@
     "./.config/scripts/cron/ansiweather.sh".source = ../../modules/scripts/cron/ansiweather.sh;
     "./.config/scripts/cron/ansiweather.sh".executable = true;
 
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    "./.config/spotify-player/app.toml".source = ../../modules/configurations/spotify-player/app.toml;
+    "./.config/spotify-player/change.sh".source = ../../modules/configurations/spotify-player/change.sh;
+    "./.config/spotify-player/change.sh".executable = true;
+    
+    "./.config/autostart/spotify-player.sh".source = ../../modules/scripts/autostart/spotify-player.sh;
+    "./.config/autostart/spotify-player.sh".executable = true;
   };
 
   # Home Manager can also manage your environment variables through

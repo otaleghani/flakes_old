@@ -331,6 +331,7 @@
             exec-once = mako &
             exec-once = hyprpaper & 
             exec-once = wal -R & 
+	    exec-once = ~/.config/autostart/spotify-player.sh &
             # exec-once = border_color &
             # exec-once = nm-applet --indicator &
 

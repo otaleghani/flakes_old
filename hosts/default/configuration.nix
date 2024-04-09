@@ -110,6 +110,8 @@
     spotify-player 
     jq
     bc
+    inotify-tools
+    via
   ];
   programs.fish.enable = true;
 
