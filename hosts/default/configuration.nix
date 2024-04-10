@@ -40,8 +40,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "it";
-    xkbVariant = "";
+    xkb.layout = "it";
+    xkb.variant = "";
   };
 
   # Configure console keymap
@@ -159,6 +159,7 @@
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
+  xdg.portal.config.common.default = "*";
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   sound.enable = true;

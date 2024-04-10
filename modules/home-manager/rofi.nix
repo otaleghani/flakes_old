@@ -4,8 +4,8 @@
   home.file."./.config/rofi/config.rasi".text = ''
     * {
       font: "JetBrains Mono Nerd Font 10";
-      background:     #${config.colorScheme.palette.base06}CC;
-      background-alt: #${config.colorScheme.palette.base01}CC;
+      background:     #${config.colorScheme.palette.base06};
+      background-alt: #${config.colorScheme.palette.base01};
       foreground:     #${config.colorScheme.palette.base02};
       selected:       #${config.colorScheme.palette.base06};
       active:         #${config.colorScheme.palette.base0A};
@@ -54,16 +54,17 @@
     window {
       /* properties for window widget */
       transparency:                "real";
-      location:                    center;
+      location:                    east;
       anchor:                      center;
       fullscreen:                  false;
       width:                       400px;
+      height:                      100%;
       x-offset:                    0px;
       y-offset:                    0px;
     
       /* properties for all widgets */
       enabled:                     true;
-      margin:                      0px;
+      margin:                      4px;
       padding:                     0px;
       border:                      0px solid;
       border-radius:               8px;
@@ -86,7 +87,7 @@
       enabled:                     true;
       spacing:                     10px;
       margin:                      0px;
-      padding:                     30px;
+      padding:                     16px;
       border:                      0px solid;
       border-radius:               0px 0px 0px 0px;
       border-color:                @border-colour;

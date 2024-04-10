@@ -17,8 +17,8 @@
   };
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = true;
-    nvidiaPatches = false;
+    systemd.enable = true;
+    enableNvidiaPatches = false;
     extraConfig = ''
       $mainMod = SUPER
       
@@ -306,8 +306,14 @@
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
 
-      #-----------------------#
-      # exec-once = default_wall 
+      #-----------#
+      # rofi bind #
+      #-----------#
+      bind=CTRL SHIFT, Return, exec, rofi -show drun
+      bind=CTRL SHIFT, Backspace, exec, ~/.config/scripts/power.sh
+      bind=CTRL SHIFT, W, exec, ~/.config/scripts/wifi.sh
+      bind=CTRL SHIFT, B, exec, ~/.config/scripts/bluetooth.sh
+
 
       #------------#
       # auto start #
