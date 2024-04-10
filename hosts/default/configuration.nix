@@ -112,6 +112,8 @@
     bc
     inotify-tools
     via
+    calcurse
+    ani-cli
   ];
   programs.fish.enable = true;
 

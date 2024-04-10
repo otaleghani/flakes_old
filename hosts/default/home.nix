@@ -7,6 +7,8 @@
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/mako.nix
+    ../../modules/home-manager/rofi.nix
   ];
   # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
   colorScheme = {
@@ -92,7 +94,6 @@
     "./.config/scripts/bluetooth.sh".source = ../../modules/scripts/bluetooth.sh;
     "./.config/scripts/bluetooth.sh".executable = true;
 
-    # Weather
     "./.config/scripts/cron/weather.sh".source = ../../modules/scripts/cron/weather.sh;
     "./.config/scripts/cron/weather.sh".executable = true;
     "./.config/scripts/cron/ansiweather.sh".source = ../../modules/scripts/cron/ansiweather.sh;

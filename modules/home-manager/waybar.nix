@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
   programs.waybar = {
     enable = true;
     systemd = {
@@ -87,7 +86,6 @@
         background-color: @base06;
         color: @base01;
       }
-
       tooltip {
         background: @base02;
       }
@@ -117,11 +115,9 @@
       #custom-hdd {
         color: @base0C;
       }
-
       #clock {
         color: @base05;
       }
-
       #pulseaudio {
         color: @base09;
       }
@@ -134,6 +130,9 @@
       #network.disconnected {
         color: rgb(255, 255, 255);
       }
+      #battery {
+        color: @base0B;
+      }
       #battery.charging, #battery.full, #battery.discharging {
         color: @base0B;
       }
@@ -145,19 +144,6 @@
       }
       #custom-powermenu {
         color: @base08;
-      }
-      #mpd.paused {
-        color: #414868;
-        font-style: italic;
-      }
-      #mpd.stopped {
-        background: transparent;
-      }
-      #mpd {
-        color: #c0caf5;
-      }
-      #custom-cava-internal{
-        font-family: "JetBrainsMono Nerd Font" ;
       }
       #custom-spotify{
 	color: @base06;
@@ -172,16 +158,11 @@
       modules-left = [
         "custom/launcher"
         "hyprland/workspaces"
-        #"idle_inhibitor"
-        #"custom/wall"
-        #"mpd"
-        #"custom/cava-internal"
 	"group/hardware"
 	"custom/spotify"
       ];
       modules-center = [ "clock" ];
       modules-right = [
-	#"custom/weather"
         "backlight"
 	"bluetooth"
         "network"
@@ -229,30 +210,9 @@
         "on-click" = "pkill rofi || sleep 0.1 && rofi -no-lazy-grab -show drun -modi drun";
         "tooltip" = false;
       };
-      "custom/wall" = {
-        "on-click" = "wallpaper_random";
-        "on-click-middle" = "default_wall";
-        "on-click-right" = "killall dynamic_wallpaper || dynamic_wallpaper &";
-        "format" = " 󰠖 ";
-        "tooltip" = false;
-      };
-      "custom/cava-internal" = {
-        "exec" = "sleep 1s && cava-internal";
-        "tooltip" = false;
-      };
       "hyprland/workspaces" = {
         "format" = "{icon}";
         "on-click" = "activate";
-        # "on-scroll-up" = "hyprctl dispatch workspace e+1";
-        # "on-scroll-down" = "hyprctl dispatch workspace e-1";
-      };
-      "idle_inhibitor" = {
-        "format" = "{icon}";
-        "format-icons" = {
-          "activated" = "";
-          "deactivated" = "";
-        };
-        "tooltip" = false;
       };
       "backlight" = {
         "device" = "intel_backlight";
@@ -298,34 +258,16 @@
         "format" = "󰻠 {usage}%";
 	"on-click-middle" = "hyprctl dispatch exec -- [workspace 10] kitty -e btop";
       };
-      "mpd" = {
-        "max-length" = 25;
-        "format" = "<span foreground='#bb9af7'></span> {title}";
-        "format-paused" = " {title}";
-        "format-stopped" = "<span foreground='#bb9af7'></span>";
-        "format-disconnected" = "";
-        "on-click" = "mpc --quiet toggle";
-        "on-click-right" = "mpc update; mpc ls | mpc add";
-        "on-click-middle" = "kitty --class='ncmpcpp' ncmpcpp ";
-        "on-scroll-up" = "mpc --quiet prev";
-        "on-scroll-down" = "mpc --quiet next";
-        "smooth-scrolling-threshold" = 5;
-        "tooltip-format" =
-          "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})";
-      };
       "network" = {
         "format-disconnected" = "󰯡 Disconnected";
         "format-ethernet" = "󰀂 {ifname} ({ipaddr})";
         "format-linked" = "󰖪 {essid} (No IP)";
         "format-wifi" = "󰖩 {essid}";
         "interval" = 1;
-        #"tooltip" = false;
 	"on-click" = "pkill rofi || sleep 0.1 && ~/.config/scripts/wifi.sh";
 	"max-lenght" = 40;
       };
       "temperature" = {
-        # "hwmon-path"= "${env:HWMON_PATH}";
-        #"critical-threshold"= 80;
         "tooltip" = false;
         "format" = " {temperatureC}°C";
 	"on-click-middle" = "hyprctl dispatch exec -- [workspace 10] kitty -e btop";

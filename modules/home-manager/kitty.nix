@@ -10,7 +10,7 @@
     shell = "fish";
   };
   programs.kitty.extraConfig = ''
-    background_opacity 0.8
+    background_opacity 0.7
 
     selection_foreground #${config.colorScheme.palette.base00}
     selection_background #${config.colorScheme.palette.base06}
@@ -62,5 +62,7 @@
 
     color7 	#${config.colorScheme.palette.base05}
     color15 	#${config.colorScheme.palette.base06}
+
+    window_padding_width 2 1 
   '';
 }
