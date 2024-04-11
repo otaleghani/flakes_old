@@ -9,6 +9,7 @@
     ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/mako.nix
     ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/neovim.nix
   ];
   # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
   colorScheme = {

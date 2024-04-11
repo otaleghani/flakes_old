@@ -114,6 +114,7 @@
     via
     calcurse
     ani-cli
+    nodejs_21
   ];
   programs.fish.enable = true;
 
