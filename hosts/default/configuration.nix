@@ -6,6 +6,7 @@
     inputs.home-manager.nixosModules.default
     inputs.nix-colors.homeManagerModules.default
   ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -13,6 +14,7 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -68,8 +70,16 @@
   nixpkgs.config.allowUnfree = true;
 
   # fonts
-  fonts.packages = with pkgs;
-    [ (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
+  fonts.packages = with pkgs; [ 
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) 
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+  ];
+
+  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.serif = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.sansSerif = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.emoji = [ "Noto Sans Color Emoji" ];
 
   # cronjobs
   services.cron = {
@@ -115,6 +125,11 @@
     calcurse
     ani-cli
     nodejs_21
+    go
+    cargo
+    python3
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
   ];
   programs.fish.enable = true;
 

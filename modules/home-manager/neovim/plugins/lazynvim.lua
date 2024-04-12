@@ -18,6 +18,15 @@ local plugins = {
     tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  {
+    'nanozuki/tabby.nvim',
+    event = 'VimEnter',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
   -- START LSP
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
@@ -25,6 +34,11 @@ local plugins = {
   {'neovim/nvim-lspconfig'},
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
+  {'hrsh7th/cmp-buffer'},
+  {'hrsh7th/cmp-path'},
+  {'saadparwaiz1/cmp_luasnip'},
+  {'hrsh7th/cmp-nvim-lua'},
+  {'rafamadriz/friendly-snippets'},
   {'L3MON4D3/LuaSnip'},
   -- END LSP
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
@@ -37,6 +51,8 @@ local plugins = {
       require('nvim-tree').setup {}
     end
   },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {'tpope/vim-fugitive'},
 }
 
 local opts = {}

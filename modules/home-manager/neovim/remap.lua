@@ -11,6 +11,7 @@ vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>:vnew<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>l", "<cmd>:belowright vnew<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>j", "<cmd>:belowright new<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>k", "<cmd>:new<cr>", {})
+vim.api.nvim_set_keymap("n", "<Leader>q", "<cmd>:q<cr>", {})
 
 -- tabs navigation
 vim.api.nvim_set_keymap("n", "<F2>", "<ESC>:tabnew<CR>", {})

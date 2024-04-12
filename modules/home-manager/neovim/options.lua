@@ -26,11 +26,11 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- numbers
-  vim.opt.relativenumber = true
-  vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.number = true
   
 -- fold
-vim.opt.foldmethod = "indent"
+-- vim.opt.foldmethod = "indent"
 
 -- signcolumn
 vim.opt.signcolumn = "auto"

@@ -5,41 +5,48 @@
     inputs.nix-colors.homeManagerModules.default
     ../../modules/home-manager/kitty.nix
     ../../modules/home-manager/fish.nix
-    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/hyprland/hyprland.nix
     ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/mako.nix
     ../../modules/home-manager/rofi.nix
-    ../../modules/home-manager/neovim.nix
+    ../../modules/home-manager/neovim/neovim.nix
+    ../../modules/home-manager/tmux.nix
   ];
   # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-frappe;
   colorScheme = {
     palette = {
-      base00 = "041218"; # base
-      base01 = "061B24"; # mantle
-      base02 = "092938"; # surface0
-      base03 = "0E3E52"; # surface1
-      base04 = "114C66"; # surface2
-      base05 = "F2FBFF"; # text0
-      base06 = "F9E8EF"; # text1
-      base07 = "EDE0F9"; # text2
+      base00 = "0c1018"; # base
+      base01 = "161e2c"; # mantle
+      base02 = "212d43"; # surface0
+      base03 = "354769"; # surface1
+      base04 = "405680"; # surface2
+      base05 = "f7f8fb"; # text0
+      base06 = "e9e9fb"; # text1
+      base07 = "f4e5fa"; # text2
 
-      base08 = "FC8D85"; # red
-      base09 = "FFC4A1"; # orange
-      base0A = "FFE991"; # yellow
-      base0B = "99EB9B"; # green
-      base0C = "91E0D5"; # acquamarine
-      base0D = "80D4FF"; # cyan
-      base0E = "EDAAFF"; # purple
-      base0F = "FFB3D1"; # coral
+      base08 = "f3bccf"; # red
+      base09 = "f2bfb5"; # orange
+      base0A = "ced330"; # yellow
+      base0B = "61e63d"; # green
+      base0C = "39e693"; # acquamarine
+      base0D = "9ed2ef"; # cyan
+      base0E = "c8c7f5"; # purple
+      base0F = "e3bef3"; # coral
 
-      base18 = "E37F78";
-      base19 = "EEB796";
-      base1A = "F3DE8A";
-      base1B = "88D18A";
-      base1C = "81C8BE";
-      base1D = "74C0E7";
-      base1E = "D99BE9";
-      base1F = "F0A8C5";
+      base18 = "f9dee7";
+      base19 = "f8dfdb";
+      base1A = "e7eb7b";
+      base1B = "bef2b6";
+      base1C = "b5f2ce";
+      base1D = "d1e8f6";
+      base1E = "e3e3f9";
+      base1F = "f0dff9";
+
+      base20 = "acbbd6"; # overlay1 
+      base21 = "99abcc"; # overlay0
+      base22 = "879cc3"; # subtext1
+      base23 = "4c6697"; # subtext0
+      base24 = "000000"; # crust
     };
   };
   #  gtk.enable = true;
