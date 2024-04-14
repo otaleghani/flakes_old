@@ -10,6 +10,8 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "nfs" ];
+  services.rpcbind.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -70,15 +72,18 @@
   nixpkgs.config.allowUnfree = true;
 
   # fonts
-  fonts.packages = with pkgs; [ 
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
   ];
 
-  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
-  fonts.fontconfig.defaultFonts.serif = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
-  fonts.fontconfig.defaultFonts.sansSerif = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.monospace =
+    [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.serif =
+    [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
+  fonts.fontconfig.defaultFonts.sansSerif =
+    [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK JP" ];
   fonts.fontconfig.defaultFonts.emoji = [ "Noto Sans Color Emoji" ];
 
   # cronjobs
@@ -117,7 +122,7 @@
     pywal
     brightnessctl
     nixfmt
-    spotify-player 
+    spotify-player
     jq
     bc
     inotify-tools
@@ -130,6 +135,10 @@
     python3
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
+    grc
+    nfs-utils
+    cifs-utils
+    rpcbind
   ];
   programs.fish.enable = true;
 

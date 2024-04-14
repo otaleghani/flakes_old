@@ -42,7 +42,7 @@
       base1E = "e3e3f9";
       base1F = "f0dff9";
 
-      base20 = "acbbd6"; # overlay1 
+      base20 = "acbbd6"; # overlay1
       base21 = "99abcc"; # overlay0
       base22 = "879cc3"; # subtext1
       base23 = "4c6697"; # subtext0
@@ -99,19 +99,23 @@
     "./.config/scripts/power.sh".executable = true;
     "./.config/scripts/wifi.sh".source = ../../modules/scripts/wifi.sh;
     "./.config/scripts/wifi.sh".executable = true;
-    "./.config/scripts/bluetooth.sh".source = ../../modules/scripts/bluetooth.sh;
+    "./.config/scripts/bluetooth.sh".source =
+      ../../modules/scripts/bluetooth.sh;
     "./.config/scripts/bluetooth.sh".executable = true;
 
-    "./.config/scripts/cron/weather.sh".source = ../../modules/scripts/cron/weather.sh;
+    "./.config/scripts/cron/weather.sh".source =
+      ../../modules/scripts/cron/weather.sh;
     "./.config/scripts/cron/weather.sh".executable = true;
-    "./.config/scripts/cron/ansiweather.sh".source = ../../modules/scripts/cron/ansiweather.sh;
+    "./.config/scripts/cron/ansiweather.sh".source =
+      ../../modules/scripts/cron/ansiweather.sh;
     "./.config/scripts/cron/ansiweather.sh".executable = true;
 
     # "./.config/spotify-player/app.toml".source = ../../modules/configurations/spotify-player/app.toml;
     # "./.config/spotify-player/change.sh".source = ../../modules/configurations/spotify-player/change.sh;
     # "./.config/spotify-player/change.sh".executable = true;
-    
-    "./.config/autostart/spotify-player.sh".source = ../../modules/scripts/autostart/spotify-player.sh;
+
+    "./.config/autostart/spotify-player.sh".source =
+      ../../modules/scripts/autostart/spotify-player.sh;
     "./.config/autostart/spotify-player.sh".executable = true;
   };
 

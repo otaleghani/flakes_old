@@ -11,7 +11,7 @@
       active:         #${config.colorScheme.palette.base0A};
       urgent:         #${config.colorScheme.palette.base08};
     }
-    
+
     /*****----- Configuration -----*****/
     configuration {
       modi:                       "drun,run";
@@ -23,7 +23,7 @@
       drun-display-format:        "{name}";
       window-format:              "{w} · {c} · {t}";
     }
-    
+
     * {
       border-colour:               var(selected);
       handle-colour:               var(foreground);
@@ -49,7 +49,7 @@
       alternate-active-background: var(active);
       alternate-active-foreground: var(background);
     }
-    
+
     /*****----- Main Window -----*****/
     window {
       /* properties for window widget */
@@ -61,7 +61,7 @@
       height:                      100%;
       x-offset:                    0px;
       y-offset:                    0px;
-    
+
       /* properties for all widgets */
       enabled:                     true;
       margin:                      4px;
@@ -81,7 +81,7 @@
       /* Angle Linear Gradient */
       //background-image:          linear-gradient(45, cyan, purple, indigo);
     }
-    
+
     /*****----- Main Box -----*****/
     mainbox {
       enabled:                     true;
@@ -94,7 +94,7 @@
       background-color:            transparent;
       children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
     }
-    
+
     /*****----- Inputbar -----*****/
     inputbar {
       enabled:                     true;
@@ -108,7 +108,7 @@
       text-color:                  @foreground-colour;
       children:                    [ "prompt", "entry" ];
     }
-    
+
     prompt {
       enabled:                     true;
       background-color:            inherit;
@@ -153,7 +153,7 @@
       background-color:            inherit;
       text-color:                  inherit;
     }
-    
+
     /*****----- Listview -----*****/
     listview {
       enabled:                     true;
@@ -183,7 +183,7 @@
       border-radius:               8px;
       background-color:            @alternate-background;
     }
-    
+
     /*****----- Elements -----*****/
     element {
       enabled:                     true;
@@ -247,7 +247,7 @@
       vertical-align:              0.5;
       horizontal-align:            0.0;
     }
-    
+
     /*****----- Mode Switcher -----*****/
     mode-switcher{
       enabled:                     false;
@@ -273,7 +273,7 @@
       background-color:            var(normal-foreground);
       text-color:                  var(normal-background);
     }
-    
+
     /*****----- Message -----*****/
     message {
       enabled:                     true;

@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  programs.spotify-player.extraConfig = ''
-  '';
+  programs.spotify-player.extraConfig = "";
 }

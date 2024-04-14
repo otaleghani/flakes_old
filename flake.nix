@@ -21,6 +21,7 @@
         ];
       };
     };
-    packages.x86_64-linux.spotify-player = nixpkgs.legacyPackages.x86_64-linux.callPackage ./modules/nixos/spotify-player.nix;
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
+    # packages.x86_64-linux.spotify-player = nixpkgs.legacyPackages.x86_64-linux.callPackage ./modules/nixos/spotify-player.nix;
   };
 }
