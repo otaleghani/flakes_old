@@ -96,46 +96,73 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # nixpkgs
+    nixfmt
+
+    # basic
     neovim
     wget
-    waybar
     kitty
+    git
+    tmux
+
+    # terminal utils
+    grc
+
+    # wayland
+    waybar
     rofi-wayland
-    libnotify
     hyprpaper
+    wl-clipboard
+
+    # notification
+    libnotify
+    inotify-tools
     mako
+
+    # utils
     networkmanager
     fcitx5
     btop
+    htop
+    brightnessctl
+    imv
+    fzf
+
+    # file manager
     ranger
+    cinnamon.nemo
+
+    # audio / music
     ncmpcpp
     mpc-cli
     mpd
     mpv
-    imv
-    nerdfonts
-    firefox
-    git
-    wl-clipboard
-    fzf
-    tmux
-    pywal
-    brightnessctl
-    nixfmt
     spotify-player
+
+    # browsers
+    firefox
     jq
     bc
-    inotify-tools
+
     via
     calcurse
+
+    # fun
     ani-cli
+
+    # programming languages
     nodejs_21
     go
     cargo
     python3
+
+    # fonts
+    nerdfonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
-    grc
+
+
     nfs-utils
     cifs-utils
     rpcbind
