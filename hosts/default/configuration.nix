@@ -169,24 +169,24 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
-  # TESTING
-  #    programs.hyprland = {
-  #      enable = true;
-  #      xwayland.enable = true;
-  #    };
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
+
+  # Bluetooth
   hardware = {
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     opengl.enable = true;
     nvidia.modesetting.enable = true;
   };
+
   xdg.portal.config.common.default = "*";
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # Sound
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
