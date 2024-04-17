@@ -44,6 +44,7 @@
       ${builtins.readFile ./plugins/palette.lua}
       ${builtins.readFile ./plugins/tabby.lua}
       ${builtins.readFile ./plugins/lualine.lua}
+      ${builtins.readFile ./plugins/restnvim.lua}
     '';
   };
 }

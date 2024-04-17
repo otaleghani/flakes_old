@@ -41,7 +41,7 @@
 
       # ricing
       #setw -g clock-mode-colour '#${config.colorScheme.palette.base07}'
-      set -g status-position bottom
+      set -g status-position top
       set -g status-justify left
       set -g status-bg "#${config.colorScheme.palette.base02}"
       set -g status-fg "#${config.colorScheme.palette.base07}"
