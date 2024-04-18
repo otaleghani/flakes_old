@@ -21,7 +21,7 @@
     enableNvidiaPatches = false;
     extraConfig = ''
             $mainMod = SUPER
-            
+
             monitor=HDMI-A-1, 1920x1080, 0x0, 1
             monitor=eDP-1, 1920x1080, 1920x0, 1
 
@@ -258,7 +258,7 @@
             #------------------------# 
             bind=$mainMod, B, exec, [workspace 2] firefox
             bind=$mainMod, M, exec, [workspace 9] hyprctl dispatch exec -- [workspace 9] kitty -e spotify_player
-            bind=$mainMod, T, exec, [workspace 1] hyprctl dispatch exec -- [workspace 1] kitty -e tmux
+            bind=$mainMod, T, exec, [workspace 1] hyprctl dispatch exec -- [workspace 1] kitty -e cd $(find * -type d | fzf) && tmux
 
             #-----------------------------------------#
             # control volume,brightness,media players-#

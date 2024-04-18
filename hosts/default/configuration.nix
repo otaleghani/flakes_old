@@ -11,6 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "nfs" ];
+
   services.rpcbind.enable = true;
 
   # network
@@ -128,6 +129,9 @@
     grc               
     neofetch
     lshw
+    tldr
+    bat     # cat alternative
+    eza     # ls alternative
     ranger            # file manager
     cinnamon.nemo
     ncmpcpp           # audio 
@@ -166,15 +170,18 @@
     driSupport = true;
     driSupport32Bit = true;
   };
+  
+  nixpkgs.config.nvidia.acceptLicense = true;
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
+    # powerManagement.enable = false;
+    # powerManagement.finegrained = false;
+    # open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable; 
     prime = {
       sync.enable = true;
+      allowExternalGpu = true;
       intelBusId = "PCI:0:2:0";
 		  nvidiaBusId = "PCI:1:0:0";
     };
