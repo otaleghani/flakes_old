@@ -110,6 +110,8 @@
     gimp
     obs-studio
     qemu
+    gnumake
+    nasm              # x86-64 assembler
     waybar            # wayland
     rofi-wayland
     hyprpaper
