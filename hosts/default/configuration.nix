@@ -105,9 +105,11 @@
     bc
     html-tidy
     httpie
+    unzip
     inkscape          # various programs
     gimp
     obs-studio
+    qemu
     waybar            # wayland
     rofi-wayland
     hyprpaper

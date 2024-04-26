@@ -177,6 +177,7 @@
         "on-click" = "spotify_player get key playback && pkill -RTMIN+9 waybar";
         "on-click-middle" =
           "hyprctl dispatch exec -- [workspace 9] kitty -e spotify_player";
+        "max-lenght" = 30;
       };
       "group/hardware" = {
         "orientation" = "inherit";
