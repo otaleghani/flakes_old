@@ -112,6 +112,7 @@
     qemu
     gnumake
     nasm              # x86-64 assembler
+    gdb               # GNU Debugger
     waybar            # wayland
     rofi-wayland
     hyprpaper
@@ -145,12 +146,22 @@
     spotify-player
     firefox           # browsers
     ani-cli           # fun
+    mov-cli
+    socat
+    html-xml-utils
+    vlc
+    # iina            # mac video player
     nodejs_21         # programming 
     go
     cargo
     python3
     sqlite
     docker
+    gcc
+    libgcc
+    gcc_multi
+    # stdenv.cc.cc.lib // { isMultiLib = true; }
+    glibc_multi
     nerdfonts         # fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
