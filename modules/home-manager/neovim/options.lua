@@ -32,6 +32,7 @@ vim.opt.number = true
 -- fold
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevelstart = 99
 
 -- signcolumn
 vim.opt.signcolumn = "auto"
