@@ -35,7 +35,6 @@
       base24 = "#${config.colorScheme.palette.base24}"
 
       ${builtins.readFile ./remap.lua}
-      ${builtins.readFile ./options.lua}
       ${builtins.readFile ./plugins/lazynvim.lua}
       ${builtins.readFile ./plugins/lsp.lua}
       ${builtins.readFile ./plugins/treesitter.lua}
@@ -45,6 +44,9 @@
       ${builtins.readFile ./plugins/tabby.lua}
       ${builtins.readFile ./plugins/lualine.lua}
       ${builtins.readFile ./plugins/restnvim.lua}
+      ${builtins.readFile ./plugins/pretty-fold.lua}
+      ${builtins.readFile ./options.lua} 
     '';
   };
+      # options.lua needs to be at the end
 }

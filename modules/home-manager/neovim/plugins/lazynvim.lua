@@ -54,6 +54,7 @@ local plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {'tpope/vim-fugitive'},
   {'tpope/vim-obsession'},
+  {'anuvyklack/pretty-fold.nvim'},
 }
 
 local opts = {}

@@ -106,6 +106,8 @@
     html-tidy
     httpie
     unzip
+    aspell
+    aspellDicts.en
     inkscape          # various programs
     gimp
     obs-studio
@@ -153,6 +155,8 @@
     # iina            # mac video player
     nodejs_21         # programming 
     go
+    rustc
+    rustfmt
     cargo
     python3
     sqlite

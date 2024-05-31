@@ -114,7 +114,7 @@
             # col.shadow = 
             # col.shadow_inactive
             # shadow_offset
-              dim_inactive = true
+            # dim_inactive = true
               dim_strength = 0.5 #0.0 ~ 1.0
       	dim_special = 0
               # blur_ignore_opacity = false
@@ -323,6 +323,7 @@
             exec-once = hyprpaper & 
             exec-once = wal -R & 
             exec-once = ~/.config/autostart/spotify-player.sh &
+            exec-once = hyprctl dispatch moveworkspacetomonitor 1 eDP-1 && sleep 1 && ~/Automations/opentodo.sh
 
             #---------------#
             # windows rules #

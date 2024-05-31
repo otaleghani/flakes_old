@@ -11,7 +11,10 @@ vim.api.nvim_set_keymap("n", "<Leader>h", "<cmd>:vnew<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>l", "<cmd>:belowright vnew<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>j", "<cmd>:belowright new<cr>", {})
 vim.api.nvim_set_keymap("n", "<Leader>k", "<cmd>:new<cr>", {})
+
+-- quit save
 vim.api.nvim_set_keymap("n", "<Leader>q", "<cmd>:q<cr>", {})
+vim.api.nvim_set_keymap("n", "<Leader>s", "<cmd>:w<cr>", {})
 
 -- tabs navigation
 vim.api.nvim_set_keymap("n", "<F2>", "<ESC>:tabnew<CR>", {})
@@ -44,3 +47,8 @@ vim.opt.termguicolors = true
 
 -- File-wide search and replace
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Fold
+-- vim.api.nvim_set_keymap('n', '<Leader>f', 'za', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>FO', 'zR', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>FA', 'zM', { noremap = true, silent = true })

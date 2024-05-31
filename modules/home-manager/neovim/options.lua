@@ -30,7 +30,8 @@ vim.opt.relativenumber = true
 vim.opt.number = true
   
 -- fold
--- vim.opt.foldmethod = "indent"
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- signcolumn
 vim.opt.signcolumn = "auto"
