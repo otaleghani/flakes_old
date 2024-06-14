@@ -3,7 +3,7 @@ vim.opt.timeout = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.autoindent = true
 vim.opt.showcmd = true
-vim.opt.laststatus = 1
+vim.opt.laststatus = 3
 vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.fillchars = { eob = " " }
