@@ -2,6 +2,11 @@
 
 {
   programs.neovim = {
+    plugins = [
+      {
+        plugin = pkgs.vimPlugins.rest-nvim;
+      }
+    ];
     enable = true;
     extraLuaConfig = ''
       base00 = "#${config.colorScheme.palette.base00}"
@@ -43,10 +48,11 @@
       ${builtins.readFile ./plugins/palette.lua}
       ${builtins.readFile ./plugins/tabby.lua}
       ${builtins.readFile ./plugins/lualine.lua}
-      ${builtins.readFile ./plugins/restnvim.lua}
       ${builtins.readFile ./plugins/pretty-fold.lua}
       ${builtins.readFile ./options.lua} 
     '';
   };
       # options.lua needs to be at the end
+      # ${builtins.readFile ./plugins/restnvim.lua}
+      # ${builtins.readFile ./plugins/luarock.lua}
 }

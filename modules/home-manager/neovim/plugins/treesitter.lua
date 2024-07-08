@@ -9,4 +9,8 @@ require'nvim-treesitter.configs'.setup {
   fold = {
     enable = true,
   },
+  -- parser_install_dir = vim.fn.expand("~/.local/share/nvim/site/parser"),
 }
+
+-- vim.fn.mkdir(vim.fn.expand("~/.local/share/nvim/site/parser"), "p")
+-- vim.opt.runtimepath:append(vim.fn.expand("~/.local/share/nvim/site/parser"))

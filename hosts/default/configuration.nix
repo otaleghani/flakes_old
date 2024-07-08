@@ -22,6 +22,16 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 3000 8080 8000 ];
+    allowedUDPPortRanges = [
+      { from = 4000; to = 4007; }
+      { from = 8000; to = 8010; }
+    ];
+  };
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # networking.firewall.enable = false;
@@ -154,16 +164,25 @@
     vlc
     # iina            # mac video player
     nodejs_21         # programming 
+    nodePackages.pnpm
     go
     rustc
     rustfmt
+    rustup
     cargo
+    cargo-binutils
+    wasm-pack         # build tool rust -> wasm
     python3
     sqlite
     docker
     gcc
     libgcc
     gcc_multi
+    luajit
+    luajitPackages.lua-curl
+    luajitPackages.nvim-nio
+    luajitPackages.mimetypes
+    luajitPackages.xml2lua
     # stdenv.cc.cc.lib // { isMultiLib = true; }
     glibc_multi
     nerdfonts         # fonts
