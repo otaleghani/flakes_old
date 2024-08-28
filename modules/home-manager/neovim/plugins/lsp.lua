@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer'},
+  ensure_installed = {'tsserver'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -28,6 +28,11 @@ require('mason-lspconfig').setup({
     end,
   }
 })
+
+
+require('mason-lspconfig').setup_handlers {
+  ['rust_analyzer'] = function() end,
+}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

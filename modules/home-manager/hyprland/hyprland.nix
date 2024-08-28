@@ -51,7 +51,7 @@
             $base1F = rgb(${config.colorScheme.palette.base1F})
 
             input {
-              kb_layout = it
+              kb_layout = us
               kb_variant =
               kb_model =
               kb_options = caps:escape
