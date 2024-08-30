@@ -27,6 +27,7 @@ local plugins = {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
+  --
   -- START LSP
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
@@ -41,6 +42,7 @@ local plugins = {
   {'rafamadriz/friendly-snippets'},
   {'L3MON4D3/LuaSnip'},
   -- END LSP
+  --
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
   {
     "nvim-tree/nvim-tree.lua",
@@ -75,27 +77,27 @@ local plugins = {
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {}
-  },
-  {
-    'mrcjkb/rustaceanvim',
-    version = '^5', -- Recommended
-    lazy = false, -- This plugin is already lazy
   }
+  -- {
+  --   'mrcjkb/rustaceanvim',
+  --   version = '^5', -- Recommended
+  --   lazy = false, -- This plugin is already lazy
+  -- }
 }
 
 local opts = {}
 
 -- run lazy.nvim on startup
 require("lazy").setup(plugins, opts)
-vim.g.rustaceanvim = {
-  server = {
-    cmd = function()
-local mason_registry = require('mason-registry')
-local ra_binary = mason_registry.is_installed('rust-analyzer') 
-  -- This may need to be tweaked, depending on the operating system.
-  and mason_registry.get_package('rust-analyzer'):get_install_path() .. "/rust-analyzer"
-  or "rust-analyzer"
-return { ra_binary } -- You can add args to the list, such as '--log-file'
-    end,
-  },
-}
+-- vim.g.rustaceanvim = {
+--   server = {
+--     cmd = function()
+-- local mason_registry = require('mason-registry')
+-- local ra_binary = mason_registry.is_installed('rust-analyzer') 
+--   -- This may need to be tweaked, depending on the operating system.
+--   and mason_registry.get_package('rust-analyzer'):get_install_path() .. "/rust-analyzer"
+--   or "rust-analyzer"
+-- return { ra_binary } -- You can add args to the list, such as '--log-file'
+--     end,
+--   },
+-- }
