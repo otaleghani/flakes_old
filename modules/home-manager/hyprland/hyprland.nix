@@ -18,7 +18,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
-    enableNvidiaPatches = false;
+    # enableNvidiaPatches = false;
     extraConfig = ''
             $mainMod = SUPER
 
@@ -88,9 +88,9 @@
             }
 
             master {
-              new_is_master = true
+            #  new_is_master = true
               special_scale_factor = 1.0
-              new_is_master = true
+            #  new_is_master = true
               no_gaps_when_only = false
             }
 

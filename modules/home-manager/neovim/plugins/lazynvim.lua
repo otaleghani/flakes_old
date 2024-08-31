@@ -77,12 +77,12 @@ local plugins = {
     "luckasRanarison/tailwind-tools.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {}
+  },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5', -- Recommended
+    lazy = false, -- This plugin is already lazy
   }
-  -- {
-  --   'mrcjkb/rustaceanvim',
-  --   version = '^5', -- Recommended
-  --   lazy = false, -- This plugin is already lazy
-  -- }
 }
 
 local opts = {}

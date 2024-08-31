@@ -163,7 +163,7 @@
     html-xml-utils
     vlc
     # iina            # mac video player
-    nodejs_21         # programming 
+    # nodejs_21         # programming 
     nodePackages.pnpm
     go
     rustc
@@ -202,10 +202,12 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  # config.hardware.nvidia.open = true;
+  hardware.nvidia.open = true;
   # nvidia
   hardware.opengl = {
     enable = true;
-    driSupport = true;
+    # driSupport = true;
     driSupport32Bit = true;
   };
   
@@ -230,7 +232,7 @@
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # sound
-  sound.enable = true;
+  # sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
