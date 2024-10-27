@@ -73,11 +73,11 @@ local plugins = {
   --     require("rest-nvim").setup()
   --   end,
   -- },
-  {
-    "luckasRanarison/tailwind-tools.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    opts = {}
-  },
+  -- {
+  --   "luckasRanarison/tailwind-tools.nvim",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   opts = {}
+  -- },
   {
     'mrcjkb/rustaceanvim',
     version = '^5', -- Recommended

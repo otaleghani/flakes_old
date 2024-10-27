@@ -163,7 +163,7 @@
     html-xml-utils
     vlc
     # iina            # mac video player
-    # nodejs_21         # programming 
+    nodejs_22         # programming 
     nodePackages.pnpm
     go
     rustc
@@ -188,6 +188,8 @@
     nerdfonts         # fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
+    dart
+    flutter
   ];
   programs.fish.enable = true;
 
