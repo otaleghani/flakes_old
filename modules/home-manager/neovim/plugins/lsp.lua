@@ -1,33 +1,37 @@
- local lsp_zero = require('lsp-zero')
+local lsp_zero = require('lsp-zero')
+local lsp_config = require('lspconfig')
+
+
+local on_attach = function(client, bufnr)
+local opts = {buffer = bufnr, remap = false}
  
- lsp_zero.on_attach(function(client, bufnr)
-   local opts = {buffer = bufnr, remap = false}
+ vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+ vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+ vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
+ vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
+ vim.keymap.set("n", "go", function() vim.lsp.buf.type_definition() end, opts)
  
-   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-   vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
-   vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
-   vim.keymap.set("n", "go", function() vim.lsp.buf.type_definition() end, opts)
+ -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+ -- vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+ -- vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+ -- vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+ -- vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+ -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+ -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+ -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+end
  
-   -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-   -- vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-   -- vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-   -- vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-   -- vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-   -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-   -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-   -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
- end)
- 
- lsp_zero.extend_lspconfig({
-   sign_text = true,
-   lsp_attach = lsp_attach,
-   capabilities = require('cmp_nvim_lsp').default_capabilities(),
- })
+lsp_zero.on_attach(on_attach)
+
+lsp_zero.extend_lspconfig({
+  sign_text = true,
+  lsp_attach = lsp_attach,
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
  
  require('mason').setup({})
  require('mason-lspconfig').setup({
-   ensure_installed = {'tsserver', 'gopls'},
+   ensure_installed = {'tsserver', 'gopls', 'ast_grep'},
    handlers = {
      function(server_name)
        require('lspconfig')[server_name].setup({})
@@ -39,10 +43,9 @@
    }
  })
  
- 
- require('mason-lspconfig').setup_handlers {
-   ['rust_analyzer'] = function() end,
- }
+-- require('mason-lspconfig').setup_handlers {
+--   ['rust_analyzer'] = function() end,
+-- }
  
  local cmp = require('cmp')
  local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -72,6 +75,49 @@
      end,
    },
  })
+
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+lsp_config.dartls.setup({
+	on_attach = on_attach,
+	--capabilities = capabilities,
+  --init_options = {
+	--	  onlyAnalyzeProjectsWithOpenFiles = false,
+	--	  suggestFromUnimportedLibraries = true,
+	--	  closingLabels = true,
+	--	  outline = false,
+	--	  flutterOutline = false,
+	--},
+  --filetypes = { "dart" },
+	--settings = {
+  --   		dart = {
+  --     			analysisExludedForlders = {
+  --       			vim.fn.expand("$HOME/AppData/Local/Pub/Cache"),
+  --       			vim.fn.expand("$HOME/.pub-cache"),
+  --       			vim.fn.expand("$HOME/tools/flutter"),
+  --       			vim.fn.expand("/opt/homebrew"),
+  --     			},
+  --      		updateImportsOnRename = true,
+	--		completeFunctionCalls = true,
+	--		showTodos = true,
+  --   		}
+  -- 	}
+})
+
+lsp_config.rust_analyzer.setup({
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      -- Enable all features
+      cargo = { allFeatures = true },
+      -- Run clippy on save
+      checkOnSave = { command = "clippy" },
+      -- Additional settings can be added here
+    }
+  }
+})
  
  -- lspconfig.rust_analyzer.setup({
  --   on_attach = on_attach,
