@@ -103,6 +103,7 @@
   # };
 
   environment.systemPackages = with pkgs; [
+    unityhub
     nixfmt            # nixpkgs
     neovim            # basic
     wget
