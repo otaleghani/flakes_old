@@ -103,6 +103,8 @@
   # };
 
   environment.systemPackages = with pkgs; [
+    csharp-ls # C# LSP
+    dotnet-sdk_8
     unityhub
     nixfmt            # nixpkgs
     neovim            # basic

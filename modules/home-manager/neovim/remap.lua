@@ -31,6 +31,9 @@ vim.api.nvim_set_keymap("n", "}", "}zzzv", {})
 vim.api.nvim_set_keymap("n", "(", "(zzzv", {})
 vim.api.nvim_set_keymap("n", ")", ")zzzv", {})
 
+-- exit terminal mode with esc
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {})
+
 -- netrw
 -- vim.api.nvim_set_keymap('n', '<leader>pv', "<cmd>:Vex | vertical resize 30<cr>", {})
 vim.g.loaded_netrw = 1

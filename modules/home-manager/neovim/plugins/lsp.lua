@@ -118,6 +118,13 @@ lsp_config.rust_analyzer.setup({
     }
   }
 })
+
+
+lsp_config.csharp_ls.setup({
+  --cmd = { "csharp" },
+  on_attach = on_attach,
+  -- capabilities = capabilities,
+})
  
  -- lspconfig.rust_analyzer.setup({
  --   on_attach = on_attach,
