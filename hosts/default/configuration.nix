@@ -102,7 +102,14 @@
   #   ];
   # };
 
+
+  # Unity needs a way to manage secrets
+  # ensures that the GNOME Keyring service is available
+  # services.gnome.keyring.enable = true;
+
   environment.systemPackages = with pkgs; [
+    gnome-keyring # Unity dependency
+    libsecret # Unity dependency
     csharp-ls # C# LSP
     dotnet-sdk_8
     unityhub

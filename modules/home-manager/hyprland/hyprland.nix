@@ -19,6 +19,15 @@
     enable = true;
     systemd.enable = true;
     # enableNvidiaPatches = false;
+    # systemd.extraCommands = [
+    #   "eval $(gnome-keyring-daemon --start --components=secrets,ssh,gpg)"
+    #   "export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID"
+    #   "export SSH_AUTH_SOCK"
+    #   "export GPG_AGENT_INFO"
+    #   "export TERM=screen"
+    #   "eval (ssh-agent -c)"
+    #   "ssh-add ~/.ssh/github"
+    # ];
     extraConfig = ''
             $mainMod = SUPER
 
