@@ -58,11 +58,24 @@
     LC_TIME = "en_US.UTF-8";
   };
   services.xserver = {
+    # Added for trying out GNOME for Unity
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+
     xkb.layout = "us";
     xkb.variant = "";
     videoDrivers = [ "nvidia" ];
   };
   console.keyMap = "en";
+
+  #environment.gnome.exludePackages = with pkgs; [
+  #  gnome-tour
+  #  gnome-connections
+  #  epiphany
+  #  gnome.geary
+  #  evince
+  #];
 
   # users
   users.users.oliviero = {
@@ -133,10 +146,6 @@
     gnumake
     nasm              # x86-64 assembler
     gdb               # GNU Debugger
-    waybar            # wayland
-    rofi-wayland
-    hyprpaper
-    wl-clipboard
     libnotify         # notification
     inotify-tools
     mako
@@ -163,7 +172,6 @@
     mpc-cli
     mpd
     mpv
-    spotify-player
     firefox           # browsers
     ani-cli           # fun
     mov-cli
@@ -237,9 +245,9 @@
     };
   };
 
-  xdg.portal.config.common.default = "*";
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  # xdg.portal.config.common.default = "*";
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # sound
   # sound.enable = true;
@@ -248,8 +256,8 @@
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
+    # pulse.enable = true;
     jack.enable = true;
   };
-  # hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
 }
